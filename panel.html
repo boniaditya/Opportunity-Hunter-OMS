@@ -1,0 +1,42 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Opportunity Hunter</title>
+    <link rel="stylesheet" href="panel.css" />
+    <script src="panel.js" defer></script>
+  </head>
+  <body>
+    <div class="app-shell">
+      <header class="app-header">
+        <div class="brand-mark" aria-hidden="true">OH</div>
+        <div class="brand-copy"><strong>Opportunity Hunter</strong><span>Local opportunity management</span></div>
+        <div class="header-actions">
+          <button class="icon-button" id="openTabButton" type="button" aria-label="Open in a separate tab" title="Open in a separate tab">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M13 5h6v6"/><path d="m19 5-9 9"/><path d="M19 13v5a1 1 0 0 1-1 1H6a1 1 0 0 1-1-1V6a1 1 0 0 1 1-1h5"/></svg>
+          </button>
+          <button class="icon-button header-menu" id="settingsButton" type="button" aria-label="Backup and settings" title="Backup and settings">⋯</button>
+        </div>
+      </header>
+
+      <nav class="tabs" aria-label="Main navigation">
+        <button class="tab active" data-view="opportunities" type="button">Opportunities</button>
+        <button class="tab" data-view="followups" type="button">Follow-ups <span id="dueCount" class="count-pill hidden"></span></button>
+        <button class="tab" data-view="people" type="button">People</button>
+      </nav>
+
+      <main id="main" tabindex="-1"></main>
+      <div id="toast" class="toast" role="status" aria-live="polite"></div>
+    </div>
+
+    <dialog id="formDialog" class="form-dialog" aria-labelledby="dialogTitle">
+      <form id="entryForm" method="dialog">
+        <div class="dialog-header"><div><p id="dialogEyebrow" class="eyebrow"></p><h2 id="dialogTitle"></h2></div><button class="icon-button" id="closeDialog" type="button" aria-label="Close">×</button></div>
+        <div id="formFields" class="form-fields"></div>
+        <div class="dialog-actions"><button class="button secondary" id="cancelDialog" type="button">Cancel</button><button class="button primary" id="saveDialog" type="submit">Save</button></div>
+      </form>
+    </dialog>
+    <input id="restoreInput" type="file" accept="application/json,.json" hidden />
+  </body>
+</html>

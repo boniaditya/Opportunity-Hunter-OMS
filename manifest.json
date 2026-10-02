@@ -1,0 +1,11 @@
+{
+  "manifest_version": 3,
+  "name": "Opportunity Hunter OMS",
+  "version": "2.0",
+  "description": "A private, offline opportunity manager with person-linked threads.",
+  "minimum_chrome_version": "116",
+  "permissions": ["sidePanel", "storage", "unlimitedStorage"],
+  "action": { "default_title": "Open Opportunity Hunter" },
+  "side_panel": { "default_path": "panel.html" },
+  "background": { "service_worker": "background.js" }
+}
