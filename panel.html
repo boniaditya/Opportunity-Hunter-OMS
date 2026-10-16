@@ -4,25 +4,32 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>Opportunity Hunter</title>
+    <link rel="icon" type="image/png" sizes="32x32" href="icons/icon-32.png" />
+    <link rel="icon" type="image/png" sizes="16x16" href="icons/icon-16.png" />
+    <link rel="apple-touch-icon" href="icons/icon-256.png" />
     <link rel="stylesheet" href="panel.css" />
     <script src="panel.js" defer></script>
   </head>
   <body>
     <div class="app-shell">
       <header class="app-header">
-        <div class="brand-mark" aria-hidden="true">OH</div>
-        <div class="brand-copy"><strong>Opportunity Hunter</strong><span>Local opportunity management</span></div>
+        <div class="brand-mark" aria-hidden="true"><img src="icons/icon-128.png" alt="" /></div>
+        <div class="brand-copy"><strong>Opportunity Hunter</strong><span>OMS - Opportunity Management System</span></div>
         <div class="header-actions">
+          <button class="icon-button notification-button" id="nextStepsButton" type="button" aria-label="Show next steps" title="Show next steps">↯<span id="nextStepCount" class="count-pill hidden"></span></button>
           <button class="icon-button" id="openTabButton" type="button" aria-label="Open in a separate tab" title="Open in a separate tab">
             <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M13 5h6v6"/><path d="m19 5-9 9"/><path d="M19 13v5a1 1 0 0 1-1 1H6a1 1 0 0 1-1-1V6a1 1 0 0 1 1-1h5"/></svg>
           </button>
-          <button class="icon-button header-menu" id="settingsButton" type="button" aria-label="Backup and settings" title="Backup and settings">⋯</button>
+          <button class="icon-button header-menu" id="settingsButton" type="button" aria-label="Settings" title="Settings">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 15.5A3.5 3.5 0 1 0 12 8a3.5 3.5 0 0 0 0 7.5Z"/><path d="M19.4 15a1.7 1.7 0 0 0 .34 1.87l.05.05a2 2 0 0 1-2.83 2.83l-.05-.05A1.7 1.7 0 0 0 15 19.36a1.7 1.7 0 0 0-1 .64 1.7 1.7 0 0 0-.38 1.09V21a2 2 0 0 1-4 0v-.07A1.7 1.7 0 0 0 8.5 19.36a1.7 1.7 0 0 0-1.87.34l-.05.05a2 2 0 0 1-2.83-2.83l.05-.05A1.7 1.7 0 0 0 4.14 15a1.7 1.7 0 0 0-.64-1 1.7 1.7 0 0 0-1.09-.38H2.34a2 2 0 0 1 0-4h.07A1.7 1.7 0 0 0 4.14 8.5a1.7 1.7 0 0 0-.34-1.87l-.05-.05a2 2 0 0 1 2.83-2.83l.05.05A1.7 1.7 0 0 0 8.5 4.14a1.7 1.7 0 0 0 1-.64A1.7 1.7 0 0 0 9.88 2.4V2.34a2 2 0 0 1 4 0v.07A1.7 1.7 0 0 0 15 4.14a1.7 1.7 0 0 0 1.87-.34l.05-.05a2 2 0 0 1 2.83 2.83l-.05.05A1.7 1.7 0 0 0 19.36 8.5a1.7 1.7 0 0 0 .64 1 1.7 1.7 0 0 0 1.09.38h.07a2 2 0 0 1 0 4h-.07A1.7 1.7 0 0 0 19.4 15Z"/></svg>
+          </button>
         </div>
       </header>
 
       <nav class="tabs" aria-label="Main navigation">
         <button class="tab active" data-view="opportunities" type="button">Opportunities</button>
         <button class="tab" data-view="followups" type="button">Follow-ups <span id="dueCount" class="count-pill hidden"></span></button>
+        <button class="tab" data-view="tasks" type="button">Problems</button>
         <button class="tab" data-view="people" type="button">People</button>
       </nav>
 
